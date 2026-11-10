@@ -17,25 +17,22 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #0d0d0d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: transparent;
 }
 
-/* Het frame (houten rand) */
+/* Het frame vult nu exact 100% van het Utherverse sign display */
 .frame {
-    position: relative;
-    width: 90vw;
-    height: 90vh;
-    border: 35px solid #4a2c11; /* De dikte en basiskleur van het hout */
-    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 28px solid #4a2c11; /* Dikte van de houten rand */
     box-shadow: 
-        inset 0 0 20px rgba(0, 0, 0, 0.9),  /* Schaduw aan de binnenkant van de rand */
-        0 20px 40px rgba(0, 0, 0, 0.8),       /* Diepe schaduw op de muur */
-        0 2px 4px rgba(255, 255, 255, 0.1);    /* Lichte glans op de bovenrand */
+        inset 0 0 15px rgba(0, 0, 0, 0.9),
+        0 0 10px rgba(0, 0, 0, 0.5);
     
-    /* Houtstructuur effect via CSS gradients */
+    /* Houtstructuur effect */
     background: 
         linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.3) 100%),
         repeating-linear-gradient(
@@ -50,7 +47,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Binnenste rand voor een afgewerkte paspartout/houten verstek-look */
+/* Binnenste afwerklijst */
 .frame::before {
     content: '';
     position: absolute;
@@ -70,7 +67,7 @@ html, body {
     left: 50%;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%) scale(1.05); /* Iets ingezoomd om YouTube-randjes te verbergen */
+    transform: translate(-50%, -50%) scale(1.05); /* Schaalt iets op om zwarte balkjes van YouTube te verbergen */
     border: none;
     pointer-events: none;
     z-index: 1;
