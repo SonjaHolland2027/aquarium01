@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aquarium met Houten Lijst</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Het frame (houten rand) */
+.frame {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    border: 35px solid #4a2c11; /* De dikte en basiskleur van het hout */
+    border-radius: 12px;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.9),  /* Schaduw aan de binnenkant van de rand */
+        0 20px 40px rgba(0, 0, 0, 0.8),       /* Diepe schaduw op de muur */
+        0 2px 4px rgba(255, 255, 255, 0.1);    /* Lichte glans op de bovenrand */
+    
+    /* Houtstructuur effect via CSS gradients */
+    background: 
+        linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.3) 100%),
+        repeating-linear-gradient(
+            45deg,
+            #3b220c,
+            #3b220c 10px,
+            #4a2c11 10px,
+            #4a2c11 20px,
+            #2e1906 20px,
+            #2e1906 30px
+        );
+    overflow: hidden;
+}
+
+/* Binnenste rand voor een afgewerkte paspartout/houten verstek-look */
+.frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* YouTube Video Player */
+#player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.05); /* Iets ingezoomd om YouTube-randjes te verbergen */
+    border: none;
+    pointer-events: none;
+    z-index: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="frame">
+    <iframe
+        id="player"
+        src="https://www.youtube.com/embed/KxNm8313grs?autoplay=1&mute=1&controls=0&loop=1&playlist=KxNm8313grs&rel=0&modestbranding=1&fs=1"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+    </iframe>
+</div>
+
+</body>
+</html>
